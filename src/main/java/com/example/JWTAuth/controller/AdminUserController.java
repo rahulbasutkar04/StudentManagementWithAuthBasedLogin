@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class AdminUser {
+public class AdminUserController {
 
     @Autowired
     private SubjectRepository subjectRepository;

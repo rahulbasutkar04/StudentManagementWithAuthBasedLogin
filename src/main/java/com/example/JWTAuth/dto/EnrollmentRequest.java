@@ -18,4 +18,5 @@ public class EnrollmentRequest {
     public void setSubjectId(Integer subjectId) { // Changed to Integer
         this.subjectId = subjectId;
     }
+
 }
