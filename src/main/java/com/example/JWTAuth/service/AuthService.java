@@ -88,7 +88,7 @@ public class AuthService {
                 response.setExpirationTime("24Hr");
                 response.setMessage("Successfully refreshed Token");
             } else {
-                response.setStatusCode(401); // Unauthorized
+                response.setStatusCode(401);
                 response.setError("Invalid or expired token.");
             }
         } catch (Exception e) {

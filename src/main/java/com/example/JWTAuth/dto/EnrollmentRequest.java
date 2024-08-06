@@ -2,16 +2,16 @@ package com.example.JWTAuth.dto;
 
 public class EnrollmentRequest {
 
-    private Integer subjectId; // Changed to Integer
+    private Integer subjectId;
 
     public EnrollmentRequest() {
     }
 
-    public EnrollmentRequest(Integer subjectId) { // Changed to Integer
+    public EnrollmentRequest(Integer subjectId) {
         this.subjectId = subjectId;
     }
 
-    public Integer getSubjectId() { // Changed to Integer
+    public Integer getSubjectId() {
         return subjectId;
     }
 

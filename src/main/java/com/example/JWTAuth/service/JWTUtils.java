@@ -19,7 +19,7 @@ public class JWTUtils {
 
     public JWTUtils() {
         String secretString = "857738347595739983757590303857574930384493030485598984844839398989999976554235677567788999999877654335667";
-        // Use a properly Base64-encoded string or create a key using Keys.hmacShaKeyFor
+
         this.key = Keys.hmacShaKeyFor(secretString.getBytes(StandardCharsets.UTF_8));
     }
 
@@ -27,7 +27,7 @@ public class JWTUtils {
         return Jwts.builder()
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME)) // Fixed multiplication
+                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .signWith(key)
                 .compact();
     }
@@ -37,7 +37,7 @@ public class JWTUtils {
                 .setClaims(claims)
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME)) // Fixed multiplication
+                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .signWith(key)
                 .compact();
     }
