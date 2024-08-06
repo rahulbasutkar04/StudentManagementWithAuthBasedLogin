@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "bcbec162-0cce-4319-82a4-df924535b1cc",
+		"name": "studentEnrollementAuthenticcation APis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26308329"
+	},
+	"item": [
+		{
+			"name": "localhost:8081/auth/signUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"name\":\"Rahul Basutkar\",\r\n    \"email\":\"rahul@gmail.com\",\r\n    \"password\":\"admin\",\r\n    \"role\":\"ADMIN\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/auth/signUp",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"signUp"
+					]
+				},
+				"description": "Using this apis one can sign up and also mention his role either admin or student"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/auth/signIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"rahul@gmail.com\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/auth/signIn",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"signIn"
+					]
+				},
+				"description": "Using this api the user either admin / student can login and get his jwt token to perfrom further actions."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/auth/signUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"name\":\"student one\",\r\n    \"email\":\"student@gmail.com\",\r\n    \"password\":\"student\",\r\n    \"role\":\"STUDENT\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/auth/signUp",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"signUp"
+					]
+				},
+				"description": "Using same we have did sign up but here the role is STUDENT."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/auth/signIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"email\":\"student@gmail.com\",\r\n    \"password\":\"student\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/auth/signIn",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"signIn"
+					]
+				},
+				"description": "using the sign in api now we have logged in as a student and got the jwt token for enrollment purpose."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/admin/saveSubject",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWh1bEBnbWFpbC5jb20iLCJpYXQiOjE3MjI5NDYyNDEsImV4cCI6MTcyMzAzMjY0MX0.KcZsAw9g0Qfdryb61uZTbJD_MVfmtbGxCKk57rFhRTxthh68iGPddqKpWnoBHcgF0_PVVZj32RnYTvOQA6mIxA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"History\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/admin/saveSubject",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"admin",
+						"saveSubject"
+					]
+				},
+				"description": "Using this api with the token that he got he can save the subjet names. but same if we try to do this using the student token he can not add it."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/public/subjects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/public/subjects",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"public",
+						"subjects"
+					]
+				},
+				"description": "This api is not require any token beacuse it is public and can acees by anyone and it is used to see the subjcts present so that student can enroll accordingly."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/student/enroll",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdHVkZW50QGdtYWlsLmNvbSIsImlhdCI6MTcyMjk0NjY0MCwiZXhwIjoxNzIzMDMzMDQwfQ.tCeqvfEOmWBf18urNDLEx7o7JNUFQYVDKW7EV5dDcYEfTkUrQp4QyFms8ogP7EOKRWs6zthbgu8hG_bD6-PzWQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subjectId\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/student/enroll",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"student",
+						"enroll"
+					]
+				},
+				"description": "Using this api the student can enroll in number of subjects but for that he require an token to for authentication that he got after sign in then only he can enroll himself."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/admin/enrollments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWh1bEBnbWFpbC5jb20iLCJpYXQiOjE3MjI5NDYyNDEsImV4cCI6MTcyMzAzMjY0MX0.KcZsAw9g0Qfdryb61uZTbJD_MVfmtbGxCKk57rFhRTxthh68iGPddqKpWnoBHcgF0_PVVZj32RnYTvOQA6mIxA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/admin/enrollments",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"admin",
+						"enrollments"
+					]
+				},
+				"description": "Using this api the admin can see all the data of students enrolled and if it can not be accessible to student only accessible to admin has has his token."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/auth/refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tokens\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWh1bEBnbWFpbC5jb20iLCJpYXQiOjE3MjI5NDYyNDEsImV4cCI6MTcyMzAzMjY0MX0.KcZsAw9g0Qfdryb61uZTbJD_MVfmtbGxCKk57rFhRTxthh68iGPddqKpWnoBHcgF0_PVVZj32RnYTvOQA6mIxA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/auth/refresh",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"refresh"
+					]
+				},
+				"description": "uisng this api we can get the new refreshed jwt token."
+			},
+			"response": []
+		}
+	]
+}
