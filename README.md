@@ -149,7 +149,7 @@ Create a basic Spring Boot application with MVC, Security, and Spring Data suppo
 
 
 
-### NOTE: I have attache api documentation for clear unsertanding in ` F:\JWTAuth\apidocumentation`
+### NOTE: I have attache api documentation for clear unsertanding in `\JWTAuth\apidocumentation`
 # Used Technologies & Tools
 ### JAVA 21
 ### Spring BOOT version 3.x.x
@@ -160,8 +160,8 @@ Create a basic Spring Boot application with MVC, Security, and Spring Data suppo
 
 ## Future Improvements
 ### This project can be done by using Test Driven Develeopment and also SOLID Principles can be utilized effectvely.
-### Can create Docker imager so that we can run application indepenedent of Opearting System just by creating its image in the container.
-### we can apis for update and delete.
+### Can create Docker image so that we can run application indepenedent of Operting System just by creating its image in the container.
+### we can create apis for update and delete.
 
 
 
